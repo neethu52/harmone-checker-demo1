@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management website</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<!--header navbar section link-->
+<header>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!--logo-->
+    <a href="#" class="logo"><span>H</span>ope<span>&</span><span>H</span>ormones</a>
+
+    <!--navbar link-->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#checker">Symptoms</a></li>
+            <li><a href="#Support">Support</a></li>
+            <li><a href="#Review">Review</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="fas fa-bars"></div>
+</header>
+
+
+<!-- Home Section -->
+<section id="home" class="home">
+    <div class="row">
+
+        <div class="images">
+            <img src="Replace the center m.png" alt="">
+        </div>
+
+        <div class="content">
+            <h1>"<span>Stronger </span>Women <span>Healthier</span> Tomorrow"</h1>
+            <p>Caring for you with excellence, empathy, and expertise. Together, let’s build a healthier community.</p>
+            <a href="#about"><button class="button">Read more</button></a>
+        </div>
+
+    </div>
+</section>
+
+<section>
+<!-- About Section -->
+<section id="about" class="about">
+    <h1 class="heading">About <span>PCOD</span></h1>
+    <p class="title">Empowering Women. Spreading Awareness. Building Healthier Futures.</p>
+
+    <div class="box-container">
+
+        <div class="box">
+            <!-- Slideshow starts here -->
+            <div class="images carousel-container">
+                <div class="carousel">
+                    <img src="https://i.pinimg.com/736x/2a/a5/06/2aa506ea70233763acb61e7e735e7120.jpg" alt="PCOD Awareness 1">
+                    <img src="https://i.pinimg.com/736x/c4/94/aa/c494aa7365e3eedd3e63f4324bc9ac07.jpg" alt="PCOD Awareness 2">
+                    <img src="https://i.pinimg.com/736x/12/d8/f5/12d8f531050e8d5eb38db40cdd868477.jpg" alt="PCOD Awareness 3">
+                    <img src="https://i.pinimg.com/736x/e4/25/a1/e425a1635c2c1a05e182cc71a4a95c04.jpg" alt="PCOD Awareness 4">
+                </div>
+            </div>
+            <!-- Slideshow ends here -->
+
+            <div class="content">
+                <p>
+                    Polycystic Ovarian Disease (PCOD) is a hormonal condition that affects many women of reproductive age. 
+                    It happens when the ovaries release immature or partially mature eggs, which over time can turn into cysts. 
+                    Women with PCOD may experience irregular or missed periods, weight gain, acne, hair thinning or excessive hair growth, 
+                    mood changes, and difficulty conceiving. The exact cause is not fully known, but genetics, lifestyle, and hormonal imbalance 
+                    play a major role. While PCOD is a long-term condition, it can be managed with healthy lifestyle changes, proper diet, 
+                    regular exercise, stress management, and medical support. Early awareness and care not only reduce symptoms but also 
+                    help prevent future complications like diabetes, infertility, and heart problems.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+let currentIndex = 0;
+const images = document.querySelectorAll(".carousel img");
+
+function showNextImage() {
+  images[currentIndex].classList.remove("active");
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add("active");
+}
+
+// show first image
+images[currentIndex].classList.add("active");
+
+// change every 3 seconds
+setInterval(showNextImage, 3000);
+</script>
+        
+
+<!-- ================== Symptom Checker ================== -->
+<section id="checker" class="checker">
+
+  <h2 class="heading">Symptom Checker</h2>
+  <p class="title">Tick the symptoms you’ve noticed recently.</p>
+
+  <div class="checker-card">
+    <form id="pcodForm">
+      <div class="checker-grid">
+        <!-- Cycle & Hormone related -->
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="irregular_periods">
+          Irregular or missed periods
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="heavy_or_painful">
+          Very heavy or very painful periods
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="acne_oily">
+          Persistent acne / oily skin
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="hair_growth">
+          Excess hair growth (face/chest/back)
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="hair_thinning">
+          Hair thinning / scalp hair loss
+        </label>
+
+        <!-- Metabolic & other -->
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="weight_gain">
+          Sudden / unexplained weight gain
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="dark_patches">
+          Dark patches on neck/underarms (acanthosis)
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="cravings_fatigue">
+          Sugar cravings or frequent fatigue
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="mood_swings">
+          Mood swings / anxiety / low mood
+        </label>
+        <label class="checker-item">
+          <input type="checkbox" name="symptom" value="fertility_difficulty">
+          Difficulty conceiving
+        </label>
+      </div>
+
+      <div class="checker-actions">
+        <button type="button" class="button" id="checkNow">Check now</button>
+        <button type="reset" class="button button-secondary" id="resetForm">Reset</button>
+      </div>
+    </form>
+
+    <div id="checkerResult" class="checker-result" aria-live="polite" hidden>
+      <h3 class="result-title"></h3>
+      <p class="result-text"></p>
+
+      <div class="suggestions" id="suggestions" hidden>
+        <h4>Helpful next steps</h4>
+        <ul>
+          <li>Track your cycle and symptoms for 2–3 months.</li>
+          <li>Aim for balanced meals (protein + fiber + healthy fats).</li>
+          <li>Move 30–45 mins most days (walk, yoga, strength).</li>
+          <li>Sleep 7–8 hours and manage stress (breathing, journaling).</li>
+          <li>Consider medical advice for blood tests & personalized care.</li>
+        </ul>
+      </div>
+
+      <p class="disclaimer">
+        <strong>Disclaimer:</strong> This tool is for awareness only and does not replace professional medical advice.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ================== /Symptom Checker ================== -->
+<!-- ========== Why Choose Us ========== -->
+<section class="Support" id="Support">
+  <h2 class="heading">Why Choose Us</h2>
+  <p class="title">We’re here to support women every step of the way</p>
+
+  <div class="whyus-grid">
+    <div class="whyus-card">
+      <div class="icon">👩‍⚕️</div>
+      <h3>Expert Doctors</h3>
+      <p>Qualified gynecologists and endocrinologists with years of PCOD/PCOS expertise.</p>
+    </div>
+
+    <div class="whyus-card">
+      <div class="icon">📝</div>
+      <h3>Personalized Plans</h3>
+      <p>Treatment strategies tailored to your unique health needs and lifestyle.</p>
+    </div>
+
+    <div class="whyus-card">
+      <div class="icon">🥗</div>
+      <h3>Diet & Lifestyle</h3>
+      <p>Nutrition guidance, exercise routines, and stress management support.</p>
+    </div>
+
+    <div class="whyus-card">
+      <div class="icon">📱</div>
+      <h3>24/7 Consultation</h3>
+      <p>Round-the-clock support, so help is always just a message away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Add Your Review (Full Width) ===== -->
+ <section class="Review" id="Review">
+<div class="add-review">
+  <h3 style="text-align: center;">Add Your Experiences and Reviews. ✍️</h3>
+
+  <form id="reviewForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <textarea id="message" rows="4" placeholder="Write your review..." required></textarea>
+    <button type="submit" class="button">Submit Review</button>
+  </form>
+</div>
+</section>
+
+
+<!-- ========== /Call to Action ========== -->
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo & About -->
+    <div class="footer-box">
+      <h2 class="logo"><span>H</span>ope<span>&</span><span>H</span>ormones</h2>
+      <p>Empowering women with awareness, care, and support for PCOD & hormonal health.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#cta">Consultation</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> support@hopehormones.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Delhi, India</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Hope & Hormones | All Rights Reserved</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
