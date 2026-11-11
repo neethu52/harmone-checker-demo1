@@ -20,7 +20,7 @@ $(document).ready(function(){
     
 });
 
-// ===== PCOD Symptom Checker =====
+
 (function () {
   const weights = {
     irregular_periods: 2,
