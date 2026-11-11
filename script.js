@@ -71,7 +71,7 @@ $(document).ready(function(){
     text.textContent = message;
     resultBox.hidden = false;
 
-    // Smooth scroll to result (nice on mobile)
+    
     resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
