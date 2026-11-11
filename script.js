@@ -79,5 +79,5 @@ $(document).ready(function(){
   document.getElementById('resetForm')?.addEventListener('click', () => {
     resultBox.hidden = true;
     tips.hidden = true;
-  });
+  })
 })();
